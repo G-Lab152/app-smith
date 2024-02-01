@@ -40,17 +40,6 @@
               "timeoutInMillisecond": 10000
             },
             {
-              "id": "Tasks_utils.getOverdueTasks",
-              "name": "utils.getOverdueTasks",
-              "collectionId": "Tasks_utils",
-              "confirmBeforeExecute": false,
-              "pluginType": "JS",
-              "jsonPathKeys": [
-                "async () => {\n  const allTasks = await getAllTasks.run();\n  const today = new Date().toISOString().slice(0, 10);\n  const overdueTasks = allTasks.filter(task => task.deadline > today);\n  const incompleteOverdueTasks = overdueTasks.filter(t => t.is_complete === false);\n  incompleteOverdueTasks.sort((a, b) => a.id - b.id);\n  return incompleteOverdueTasks;\n}"
-              ],
-              "timeoutInMillisecond": 10000
-            },
-            {
               "id": "Tasks_utils.getPendingTasks",
               "name": "utils.getPendingTasks",
               "collectionId": "Tasks_utils",
@@ -58,6 +47,19 @@
               "pluginType": "JS",
               "jsonPathKeys": [
                 "async () => {\n  const allTasks = await getAllTasks.run();\n  const pendingTasks = allTasks.filter(task => !task.is_complete);\n  const incompletePendingTasks = pendingTasks.filter(t => t.is_complete === false);\n  incompletePendingTasks.sort((a, b) => a.id - b.id);\n  return incompletePendingTasks;\n}"
+              ],
+              "timeoutInMillisecond": 10000
+            }
+          ],
+          [
+            {
+              "id": "Tasks_utils.getOverdueTasks",
+              "name": "utils.getOverdueTasks",
+              "collectionId": "Tasks_utils",
+              "confirmBeforeExecute": false,
+              "pluginType": "JS",
+              "jsonPathKeys": [
+                "async () => {\n  const allTasks = await getAllTasks.run();\n  const today = new Date().toISOString().slice(0, 10);\n  const overdueTasks = allTasks.filter(task => task.deadline > today);\n  const incompleteOverdueTasks = overdueTasks.filter(t => t.is_complete === false);\n  incompleteOverdueTasks.sort((a, b) => a.id - b.id);\n  return incompleteOverdueTasks;\n}"
               ],
               "timeoutInMillisecond": 10000
             },
