@@ -435,7 +435,7 @@
     "widgetId": "30s2xz9lqx",
     "enableServerSideFiltering": false,
     "minWidth": 450,
-    "tableData": "{{getUsers.data}}",
+    "tableData": "{{getFemaleUsers.data}}",
     "label": "Data",
     "searchKey": "",
     "parentId": "0",

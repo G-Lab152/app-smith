@@ -2,7 +2,7 @@
   "pluginType": "DB",
   "pluginId": "postgres-plugin",
   "unpublishedAction": {
-    "name": "getUsers",
+    "name": "getFemaleUsers",
     "datasource": {
       "name": "users",
       "pluginId": "postgres-plugin",
@@ -18,7 +18,7 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "SELECT * FROM public.\"users\" LIMIT 10;\n",
+      "body": "SELECT * FROM public.users WHERE gender = 'female';",
       "selfReferencingDataPaths": [],
       "pluginSpecifiedTemplates": [
         {
@@ -32,13 +32,13 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [],
-    "userSetOnLoad": true,
+    "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": [],
-    "createdAt": "2024-01-23T06:50:27Z"
+    "createdAt": "2024-01-23T07:41:44Z"
   },
-  "id": "Home_getUsers",
+  "id": "Home_getFemaleUsers",
   "deleted": false,
-  "gitSyncId": "65af61704ab5173e016defeb_2024-01-23T06:50:27.529339517Z"
+  "gitSyncId": "65af65ea8b0dab0f3bb7f2ce_65af6db88b0dab0f3bb7f359"
 }

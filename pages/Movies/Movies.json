@@ -1,63 +1,62 @@
 {
   "unpublishedPage": {
-    "name": "Home",
-    "slug": "home",
+    "name": "Movies",
+    "slug": "movies",
     "layouts": [
       {
         "viewMode": false,
         "dsl": {
           "widgetName": "MainContainer",
           "backgroundColor": "none",
-          "rightColumn": 4896,
+          "rightColumn": 1174,
           "snapColumns": 64,
           "detachFromLayout": true,
           "widgetId": "0",
           "topRow": 0,
-          "bottomRow": 1100,
+          "bottomRow": 880,
           "containerStyle": "none",
-          "snapRows": 124,
+          "snapRows": 125,
           "parentRowSpace": 1,
           "type": "CANVAS_WIDGET",
           "canExtend": true,
           "version": 88,
-          "minHeight": 1292,
-          "dynamicTriggerPathList": [],
+          "minHeight": 900,
           "parentColumnSpace": 1,
+          "dynamicTriggerPathList": [],
           "dynamicBindingPathList": [],
           "leftColumn": 0
         },
         "layoutOnLoadActions": [
           [
             {
-              "id": "Home_getFemaleUsers",
-              "name": "getFemaleUsers",
+              "id": "Movies_FindQuery",
+              "name": "FindQuery",
               "confirmBeforeExecute": false,
               "pluginType": "DB",
-              "jsonPathKeys": [],
-              "timeoutInMillisecond": 10000
-            },
-            {
-              "id": "Home_getUsers",
-              "name": "getUsers",
-              "confirmBeforeExecute": false,
-              "pluginType": "DB",
-              "jsonPathKeys": [],
+              "jsonPathKeys": [
+                "data_table.sortOrder.column || 'genres'",
+                "key_select.selectedOptionValue",
+                "data_table.sortOrder.order == \"desc\" ? -1 : 1",
+                "data_table.pageSize",
+                "data_table.searchText||\"\"",
+                "(data_table.pageNo - 1) * data_table.pageSize",
+                "order_select.selectedOptionValue"
+              ],
               "timeoutInMillisecond": 10000
             }
           ]
         ],
         "layoutOnLoadActionErrors": [],
         "validOnPageLoadActions": true,
-        "id": "Home",
+        "id": "Movies",
         "deleted": false,
         "policies": [],
         "userPermissions": []
       }
     ],
     "userPermissions": [],
-    "policies": [],
-    "isHidden": false
+    "policies": []
   },
   "deleted": false,
-  "gitSyncId": "65af61704ab5173e016defeb_65af61b38b0dab0f3bb7f29e"
+  "gitSyncId": "65af65ea8b0dab0f3bb7f2ce_65b0b9151376002499f4f666"
 }
